@@ -18,21 +18,17 @@ Cada técnica se explica con su **caso de uso**, y **ejemplo en código**.
 
 ### **Ejemplo: Subarray con Suma Mínima ≥ Target**
 ```js
-function minSubArrayLen(target, nums) {
-    let left = 0, sum = 0, minLength = Infinity;
-    
-    for (let right = 0; right < nums.length; right++) {
-        sum += nums[right]; 
-        
-        while (sum >= target) {
-            minLength = Math.min(minLength, right - left + 1);
-            sum -= nums[left]; 
-            left++;
-        }
+function maximumSum(nums, k) {
+    let sum = 0, maxSum = 0;
+    for (let i = 0; i < k; i++) {
+        sum += nums[i];
     }
-    
-    return minLength === Infinity ? 0 : minLength;
+    maxSum = sum;
+    for (let j = k; j < nums.length; j++) {
+        sum += nums[j] - nums[j - k]
+        maxSum = Math.max(maxSum, sum)
+    }
+    return maxSum
 }
 
-// 🔹 Ejemplo de uso:
-console.log(minSubArrayLen(7, [2,3,1,2,4,3])); // Output: 2 (subarray [4,3])
+maximumSum([2, 3, 4, 1, 5, 6, 2, 8], 3)
