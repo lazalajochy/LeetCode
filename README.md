@@ -1,7 +1,7 @@
 # 🔥 Técnicas para la Suma de Subarrays en JavaScript
 
-Este repositorio contiene implementaciones en **JavaScript** de las técnicas más eficientes para resolver problemas relacionados con **suma de subarrays**.  
-Cada técnica se explica con su **caso de uso**, **requerimientos** y **ejemplo en código**.
+Este repositorio contiene implementaciones en **JavaScript** de las técnicas más eficientes para resolver problemas relacionados con **operaciones de subarrays**.  
+Cada técnica se explica con su **caso de uso**, y **ejemplo en código**.
 
 ---
 
