@@ -12,11 +12,8 @@ Cada técnica se explica con su **caso de uso**, y **ejemplo en código**.
 - Subarrays con **tamaño fijo (`k`)** o con una suma **≥ target**.  
 - Problemas donde **todos los números son positivos** (o la suma siempre crece).  
 
-### 🚨 **Requerimientos:**  
-- El array debe contener **solo números positivos**.  
-- No funciona bien con **números negativos**, ya que pueden invalidar la técnica.  
+Dado un array de números enteros nums y un número entero k, escribe una función maximumSum(nums, k) que devuelva la suma máxima de cualquier subarray contiguo de longitud k  
 
-### **Ejemplo: Subarray con Suma Mínima ≥ Target**
 ```js
 function maximumSum(nums, k) {
     let sum = 0, maxSum = 0;
