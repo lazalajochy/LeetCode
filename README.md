@@ -61,3 +61,30 @@ Es una estructura de datos utilizada en algoritmos para mantener elementos en or
 
 decr([5, 3, 5, 6, 5, 4, 3, 7]);
 ```
+
+## ¿Qué es Prefix Sum?
+El Prefix Sum (también llamado "Suma Acumulativa" o "Suma Prefixada") es una técnica utilizada para calcular eficientemente la suma de elementos en un arreglo. Se basa en precomputar las sumas de los primeros elementos del arreglo para responder consultas de rango en tiempo constante  O(1).
+
+```js
+  function prefixSum(arr) {
+      let n = arr.length;
+      let prefix = new Array(n);
+      prefix[0] = arr[0];
+  
+      for (let i = 1; i < n; i++) {
+          prefix[i] = prefix[i - 1] + arr[i];
+      }
+  
+      return prefix;
+  }
+  
+  function rangeSum(prefix, l, r) {
+      if (l == 0) return prefix[r];
+      return prefix[r] - prefix[l - 1];
+  }
+  
+  // Ejemplo de uso
+  let arr = [2, 3, 7, 1, 8, 4];
+  let prefix = prefixSum(arr);
+  console.log(rangeSum(prefix, 1, 4)); // Suma de arr[1] a arr[4] -> 3 + 7 + 1 + 8 = 19
+```
